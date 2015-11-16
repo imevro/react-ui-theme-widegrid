@@ -1,0 +1,66 @@
+@import './mixins/grid';
+
+$grid-columns: 40;
+$grid-gutter-width: 30px;
+
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
+$container-xs: 100%;
+$container-sm: resolve(720px + $grid-gutter-width);
+$container-md: resolve(940px + $grid-gutter-width);
+$container-lg: resolve(1140px + $grid-gutter-width);
+
+.container {
+  @include make-container(static);
+}
+
+.containerFluid {
+  @include make-container();
+}
+
+.row {
+  @include make-row();
+}
+
+@for $i from 1 to 40 {
+  .xs-$i {
+    @include make-column(xs, $i);
+  }
+
+  .xs-offset-$i {
+    @include make-offset(xs, $i);
+  }
+}
+
+@for $i from 1 to 40 {
+  .sm-$i {
+    @include make-column(sm, $i);
+  }
+
+  .sm-offset-$i {
+    @include make-offset(sm, $i);
+  }
+}
+
+@for $i from 1 to 40 {
+  .md-$i {
+    @include make-column(md, $i);
+  }
+
+  .md-offset-$i {
+    @include make-offset(md, $i);
+  }
+}
+
+@for $i from 1 to 40 {
+  .lg-$i {
+    @include make-column(lg, $i);
+  }
+
+  .lg-offset-$i {
+    @include make-offset(lg, $i);
+  }
+}
