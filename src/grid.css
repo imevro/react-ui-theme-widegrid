@@ -1,6 +1,6 @@
 @import './mixins/grid';
 
-$grid-columns: 40;
+$grid-columns: 20;
 $grid-gutter-width: 30px;
 
 $screen-xs: 480px;
@@ -25,7 +25,7 @@ $container-lg: resolve(1140px + $grid-gutter-width);
   @include make-row();
 }
 
-@for $i from 1 to 40 {
+@for $i from 1 to 20 {
   .xs-$i {
     @include make-column(xs, $i);
   }
@@ -33,9 +33,7 @@ $container-lg: resolve(1140px + $grid-gutter-width);
   .xs-offset-$i {
     @include make-offset(xs, $i);
   }
-}
 
-@for $i from 1 to 40 {
   .sm-$i {
     @include make-column(sm, $i);
   }
@@ -43,9 +41,7 @@ $container-lg: resolve(1140px + $grid-gutter-width);
   .sm-offset-$i {
     @include make-offset(sm, $i);
   }
-}
 
-@for $i from 1 to 40 {
   .md-$i {
     @include make-column(md, $i);
   }
@@ -53,9 +49,7 @@ $container-lg: resolve(1140px + $grid-gutter-width);
   .md-offset-$i {
     @include make-offset(md, $i);
   }
-}
 
-@for $i from 1 to 40 {
   .lg-$i {
     @include make-column(lg, $i);
   }
