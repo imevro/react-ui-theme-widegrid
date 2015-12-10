@@ -18,56 +18,42 @@
       width: $container-lg;
     }
   }
-
-  &:before,
-  &:after {
-    display: table;
-    content: " ";
-  }
-
-  &:after {
-    clear: both;
-  }
 }
 
 @mixin make-row() {
   box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-left: resolve(-($grid-gutter-width/2));
   margin-right: resolve(-($grid-gutter-width/2));
-
-  &:before,
-  &:after {
-    display: table;
-    content: " ";
-  }
-
-  &:after {
-    clear: both;
-  }
 }
 
 @mixin make-column($media, $columns) {
   box-sizing: border-box;
-  position: relative;
-  float: left;
-  min-height: 1px;
+  flex: 0 0 auto;
+  width: 100%;
   padding-right: resolve($grid-gutter-width/2);
   padding-left: resolve($grid-gutter-width/2);
-  width: 100%;
 
   @if $media == xs {
-    width: resolve($columns / $grid-columns * 100)%;
+    flex-basis: resolve($columns / $grid-columns * 100)%;
+    max-width: resolve($columns / $grid-columns * 100)%;
   } @else if $media == sm {
     @media (min-width: $screen-sm) {
-      width: resolve($columns / $grid-columns * 100)%;
+      flex-basis: resolve($columns / $grid-columns * 100)%;
+      max-width: resolve($columns / $grid-columns * 100)%;
     }
   } @else if $media == md {
     @media (min-width: $screen-md) {
-      width: resolve($columns / $grid-columns * 100)%;
+      flex-basis: resolve($columns / $grid-columns * 100)%;
+      max-width: resolve($columns / $grid-columns * 100)%;
     }
   } @else if $media == lg {
     @media (min-width: $screen-lg) {
-      width: resolve($columns / $grid-columns * 100)%;
+      flex-basis: resolve($columns / $grid-columns * 100)%;
+      max-width: resolve($columns / $grid-columns * 100)%;
     }
   }
 }
