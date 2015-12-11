@@ -25,6 +25,22 @@ $container-lg: resolve(1140px + $grid-gutter-width);
   @include make-row();
 }
 
+.xs {
+  @include alignment();
+}
+
+.sm {
+  @include alignment();
+}
+
+.md {
+  @include alignment();
+}
+
+.lg {
+  @include alignment();
+}
+
 @for $i from 1 to 20 {
   .xs-$i {
     @include make-column(xs, $i);
