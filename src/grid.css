@@ -25,42 +25,58 @@ $container-lg: resolve(1140px + $grid-gutter-width);
   @include make-row();
 }
 
-@for $i from 1 to 20 {
-  .xs-$i {
-    @include make-column(xs, $i);
-  }
+.xs {
+  @include alignment();
 
-  .xs-offset-$i {
-    @include make-offset(xs, $i);
-  }
-}
+  @for $i from 1 to 20 {
+    &-$i {
+      @include make-column(xs, $i);
+    }
 
-@for $i from 1 to 20 {
-  .sm-$i {
-    @include make-column(sm, $i);
-  }
-
-  .sm-offset-$i {
-    @include make-offset(sm, $i);
+    &-offset-$i {
+      @include make-offset(xs, $i);
+    }
   }
 }
 
-@for $i from 1 to 20 {
-  .md-$i {
-    @include make-column(md, $i);
-  }
+.sm {
+  @include alignment();
 
-  .md-offset-$i {
-    @include make-offset(md, $i);
+  @for $i from 1 to 20 {
+    &-$i {
+      @include make-column(xs, $i);
+    }
+
+    &-offset-$i {
+      @include make-offset(xs, $i);
+    }
   }
 }
 
-@for $i from 1 to 20 {
-  .lg-$i {
-    @include make-column(lg, $i);
-  }
+.md {
+  @include alignment();
 
-  .lg-offset-$i {
-    @include make-offset(lg, $i);
+  @for $i from 1 to 20 {
+    &-$i {
+      @include make-column(xs, $i);
+    }
+
+    &-offset-$i {
+      @include make-offset(xs, $i);
+    }
+  }
+}
+
+.lg {
+  @include alignment();
+
+  @for $i from 1 to 20 {
+    &-$i {
+      @include make-column(xs, $i);
+    }
+
+    &-offset-$i {
+      @include make-offset(xs, $i);
+    }
   }
 }
