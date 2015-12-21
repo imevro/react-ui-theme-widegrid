@@ -44,11 +44,11 @@ $container-lg: resolve(1140px + $grid-gutter-width);
 
   @for $i from 1 to 20 {
     &-$i {
-      @include make-column(xs, $i);
+      @include make-column(sm, $i);
     }
 
     &-offset-$i {
-      @include make-offset(xs, $i);
+      @include make-offset(sm, $i);
     }
   }
 }
@@ -58,11 +58,11 @@ $container-lg: resolve(1140px + $grid-gutter-width);
 
   @for $i from 1 to 20 {
     &-$i {
-      @include make-column(xs, $i);
+      @include make-column(md, $i);
     }
 
     &-offset-$i {
-      @include make-offset(xs, $i);
+      @include make-offset(md, $i);
     }
   }
 }
@@ -72,11 +72,11 @@ $container-lg: resolve(1140px + $grid-gutter-width);
 
   @for $i from 1 to 20 {
     &-$i {
-      @include make-column(xs, $i);
+      @include make-column(lg, $i);
     }
 
     &-offset-$i {
-      @include make-offset(xs, $i);
+      @include make-offset(lg, $i);
     }
   }
 }
